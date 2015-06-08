@@ -11,12 +11,44 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    let kClientID = "29a47173299e49c281c5bce78d1276b2"
+    let kCallbackURL = "coolspot://callback"
+    let kTokenSwapURL = "http://www.weblysa.com:1234/swap"
+    let kTokenRefreshServiceURL = "http://www.weblysa.com:1234/refresh"
+    
     var window: UIWindow?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         return true
+    }
+    
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
+        
+        if SPTAuth.defaultInstance().canHandleURL(url, withDeclaredRedirectURL: NSURL(string: kCallbackURL)) {
+            SPTAuth.defaultInstance().handleAuthCallbackWithTriggeredAuthURL(url, tokenSwapServiceEndpointAtURL: NSURL(string: kTokenSwapURL), callback: { (error:NSError!, session:SPTSession!) -> Void in
+                if error != nil {
+                    println("AUTHENTICATION ERROR")
+                    return
+                }
+                
+                let userDefaults = NSUserDefaults.standardUserDefaults()
+
+                let sessionData = NSKeyedArchiver.archivedDataWithRootObject(session)
+                
+                userDefaults.setObject(sessionData, forKey: "SpotifySession")
+                
+                userDefaults.synchronize()
+                
+                NSNotificationCenter.defaultCenter().postNotificationName("loginSuccessfull", object: nil)
+                
+                
+           })
+        }
+        
+        return false
+        
     }
 
     func applicationWillResignActive(application: UIApplication) {
