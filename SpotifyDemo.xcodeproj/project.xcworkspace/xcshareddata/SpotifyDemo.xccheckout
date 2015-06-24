@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>DDE2C2B7-9012-4270-841F-5915354F94C1</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SpotifyDemo</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F71E56C7056A6C6EB8D6FB7E0328436082931795</key>
+		<string>https://github.com/spirosrap/SpotifyExplore.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SpotifyDemo.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F71E56C7056A6C6EB8D6FB7E0328436082931795</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/spirosrap/SpotifyExplore.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F71E56C7056A6C6EB8D6FB7E0328436082931795</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F71E56C7056A6C6EB8D6FB7E0328436082931795</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SpotifyExplore</string>
+		</dict>
+	</array>
+</dict>
+</plist>

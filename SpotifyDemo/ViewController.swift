@@ -103,10 +103,10 @@ class ViewController: UIViewController, SPTAudioStreamingPlaybackDelegate {
             SPTRequest.performSearchWithQuery("let it go", queryType: SPTSearchQueryType.QueryTypeTrack, offset: 0, session: nil, callback: { (error:NSError!, result:AnyObject!) -> Void in
                 let trackListPage = result as! SPTListPage
                 
-                let partialTrack = trackListPage.items.first as SPTPartialTrack
+                let partialTrack = trackListPage.items.first as! SPTPartialTrack
                 
                 SPTRequest.requestItemFromPartialObject(partialTrack, withSession: nil, callback: { (error:NSError!, results:AnyObject!) -> Void in
-                    let track = results as SPTTrack
+                    let track = results as! SPTTrack
                     self.player?.playTrackProvider(track, callback: nil)
                 })
                 
